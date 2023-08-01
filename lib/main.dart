@@ -47,7 +47,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
     // 1
@@ -87,7 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: buildRecipeCard(Recipe.samples[index]),
             );
           },
-        )
+        ),
       ),
     );
   }
@@ -98,14 +97,12 @@ class _MyHomePageState extends State<MyHomePage> {
       // 1
       elevation: 2.0,
       // 2
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10.0)
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
       // 3
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         // 4
-        child: Column (
+        child: Column(
           children: <Widget>[
             Image(image: AssetImage(recipe.imageUrl)),
             // 5
