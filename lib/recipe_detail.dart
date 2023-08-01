@@ -10,7 +10,7 @@ class RecipeDetail extends StatefulWidget {
   const RecipeDetail({
     Key? key,
     required this.recipe,
-  }): super(key: key);
+  }) : super(key: key);
 
   @override
   State<RecipeDetail> createState() {
@@ -18,10 +18,8 @@ class RecipeDetail extends StatefulWidget {
   }
 }
 
-
 // [Done] TODO: Add _RecipeDetailState here.
 class _RecipeDetailState extends State<RecipeDetail> {
-
   // TODO: Add _sliderVal here
 
   @override
@@ -49,11 +47,27 @@ class _RecipeDetailState extends State<RecipeDetail> {
               height: 4,
             ),
             // 6
-            Text (
+            Text(
               widget.recipe.label,
               style: const TextStyle(fontSize: 18),
             ),
-            // TODO: Add Expanded
+            // [Done] TODO: Add Expanded
+            // 7
+            Expanded(
+              // 8
+              child: ListView.builder(
+                padding: const EdgeInsets.all(7.0),
+                itemCount: widget.recipe.ingredients.length,
+                itemBuilder: (BuildContext context, int index) {
+                  final ingredient = widget.recipe.ingredients[index];
+                  // 9
+                  // TODO: Add ingredient.quantity
+                  return Text(
+                    '${ingredient.quantity} ${ingredient.measure} ${ingredient.name}'
+                  );
+                },
+              ),
+            ),
             // TODO: Add Slider() here
           ],
         ),
