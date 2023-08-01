@@ -3,6 +3,7 @@
 
 import 'package:flutter/material.dart';
 import 'recipe.dart';
+import 'recipe_detail.dart';
 
 void main() {
   runApp(const RecipeApp());
@@ -64,10 +65,27 @@ class _MyHomePageState extends State<MyHomePage> {
           itemCount: Recipe.samples.length,
           // 6
           itemBuilder: (BuildContext context, int index) {
-            // 7
             // [Done] TODO: Update to return Recipe card
-            // TODO: Add GestureDetector
-            return buildRecipeCard(Recipe.samples[index]);
+            // [Done] TODO: Add GestureDetector
+            // 7
+            return GestureDetector(
+              // 8
+              onTap: () {
+                // 9
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      // 10
+                      // [Done] TODO: Replace return with return RecipeDetail()
+                      return RecipeDetail(recipe: Recipe.samples[index]);
+                    },
+                  ),
+                );
+              },
+              // 11
+              child: buildRecipeCard(Recipe.samples[index]),
+            );
           },
         )
       ),
@@ -76,17 +94,35 @@ class _MyHomePageState extends State<MyHomePage> {
 
   // [Done] TODO: Add buildRecipeCard() here
   Widget buildRecipeCard(Recipe recipe) {
-    // 1
     return Card(
+      // 1
+      elevation: 2.0,
       // 2
-      child: Column(
-        // 3
-        children: <Widget>[
-          // 4
-          Image(image: AssetImage(recipe.imageUrl)),
-          // 5
-          Text(recipe.label),
-        ],
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10.0)
+      ),
+      // 3
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        // 4
+        child: Column (
+          children: <Widget>[
+            Image(image: AssetImage(recipe.imageUrl)),
+            // 5
+            const SizedBox(
+              height: 14.0,
+            ),
+            // 6
+            Text(
+              recipe.label,
+              style: const TextStyle(
+                fontSize: 20.0,
+                fontWeight: FontWeight.w700,
+                fontFamily: 'Palatino',
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
