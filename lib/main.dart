@@ -24,7 +24,7 @@ class RecipeApp extends StatelessWidget {
       // 5
       theme: theme.copyWith(
         colorScheme: theme.colorScheme.copyWith(
-          primary: Colors.grey,
+          primary: Colors.yellow.shade700,
           secondary: Colors.black,
         ),
       ),
