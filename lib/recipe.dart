@@ -4,16 +4,20 @@
 class Recipe {
   String label;
   String imageUrl;
-
   // [Done] TODO: Add servings and ingredients here
   int servings;
   List<Ingredient> ingredients;
+  // Description & Cooking Time.
+  String cookTime;
+  String description;
 
   Recipe(
     this.label,
     this.imageUrl,
     this.servings,
     this.ingredients,
+    this.cookTime,
+    this.description,
   );
 
   // [Done] TODO: Add List<Recipe> here.
@@ -27,6 +31,10 @@ class Recipe {
         Ingredient(4, '', 'Frozen Meatballs',),
         Ingredient(0.5, 'jar', 'sauce',),
       ],
+      '45 min',
+      ('Originally inspired by similar dishes from southern Italy, the modern '
+       'version of spaghetti and meatballs was developed by Italian immigrants '
+       'in the USA...'),
     ),
     Recipe(
       'Tomato Soup',
@@ -35,6 +43,9 @@ class Recipe {
       [
         Ingredient(1, 'can', 'Tomato Soup',),
       ],
+      '30 min',
+      ('Tomato soup is a soup with tomatoes as the primary ingredient. It can '
+       'be served hot or cold, and may be made in a variety of ways...'),
     ),
     Recipe(
       'Grilled Cheese',
@@ -44,6 +55,12 @@ class Recipe {
         Ingredient(2, 'slices', 'Cheese',),
         Ingredient(2, 'slices', 'Bread',),
       ],
+      '15 min',
+      ('A grilled cheese (sometimes known as a toasted sandwich or cheese toastie) '
+       'is a hot cheese sandwich typically prepared by heating slices of cheese '
+       'between slices of bread with a cooking fat such as butter or mayonnaise '
+       'on a frying pan, griddle, or sandwich toaster, until the bread browns and '
+       'the cheese melts...'),
     ),
     Recipe(
       'Chocolate Chip Cookies',
@@ -54,6 +71,12 @@ class Recipe {
         Ingredient(2, 'cups', 'sugar',),
         Ingredient(0.5, 'cups', 'chocolate chips',),
       ],
+      '30 min',
+      ('A chocolate chip cookie is a drop cookie that features chocolate chips '
+       'or chocolate morsels as its distinguishing ingredient. Chocolate chip '
+       'cookies originated in the United States in 1938, when Ruth Graves Wakefield '
+       'chopped up a Nestlé semi-sweet chocolate bar and added the chopped chocolate '
+       'to a cookie recipe...'),
     ),
     Recipe(
       'Taco Salad',
@@ -65,6 +88,9 @@ class Recipe {
         Ingredient(0.5, 'cup', 'cheese',),
         Ingredient(0.25, 'cup', 'chopped tomatoes',),
       ],
+      '20 min',
+      ('A taco salad is a Tex-Mex dish that combines ingredients used in Tex-Mex '
+       'tacos. The dish originated in Texas during the 1960s...'),
     ),
     Recipe(
       'Hawaiian Pizza',
@@ -75,6 +101,9 @@ class Recipe {
         Ingredient(1, 'cup', 'pineapple',),
         Ingredient(8, 'oz', 'ham',),
       ],
+      '35 min',
+      ('Hawaiian pizza is a pizza originating in Canada, and is traditionally '
+       'topped with pineapple, tomato sauce, cheese, and either ham or bacon...'),
     ),
   ];
 }
