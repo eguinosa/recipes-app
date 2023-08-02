@@ -50,7 +50,36 @@ class _RecipeDetailState extends State<RecipeDetail> {
             // 6
             Text(
               widget.recipe.label,
-              style: const TextStyle(fontSize: 18),
+              style: const TextStyle(
+                fontSize: 22.0,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+            const SizedBox(
+              height: 4.0,
+            ),
+            // -- Cooking Time --
+            Text(
+              '${widget.recipe.cookTime} - ${_sliderVal * widget.recipe.servings} servings',
+              textAlign: TextAlign.right,
+              style: const TextStyle(
+                fontSize: 12.0,
+              ),
+            ),
+            const SizedBox(
+              height: 10.0,
+            ),
+            const SizedBox(
+              height: 18.0,
+              width: double.infinity,
+              child: Text(
+                '  Ingredients:',
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
             ),
             // [Done] TODO: Add Expanded
             // 7
@@ -64,12 +93,37 @@ class _RecipeDetailState extends State<RecipeDetail> {
                   // 9
                   // [Done] TODO: Add ingredient.quantity
                   return Text(
-                    '${ingredient.quantity * _sliderVal} '
-                    '${ingredient.measure} ${ingredient.name}'
+                    '    ${ingredient.quantity * _sliderVal} '
+                    '${ingredient.measure} ${ingredient.name}',
+                    textAlign: TextAlign.left,
                   );
                 },
               ),
             ),
+            const SizedBox(
+              height: 5.0,
+            ),
+            const SizedBox(
+              height: 18.0,
+              width: double.infinity,
+              child: Text(
+                '  Description:',
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+            Expanded(
+              child: Container(
+                padding: const EdgeInsets.only(top: 5.0, left: 20.0, right: 20.0),
+                child: Text(
+                  widget.recipe.description,
+                ),
+              ),
+            ),
+            const Spacer(),
             // [Done] TODO: Add Slider() here
             Slider(
               // 10
